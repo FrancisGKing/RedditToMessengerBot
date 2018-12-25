@@ -10,7 +10,7 @@ PAT = ''
 
 @app.route('/', methods=['GET'])
 def handle_verification():
-	print "Handling Verification"
+	print ("Handling Verification.")
 	if request.args.get('hub.verfiy_token', '') == 'my_voice_is_my_password_verify_me':
 		print "Verification successful!"
 		return request.args.get('hub.challenge', '')

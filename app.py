@@ -128,13 +128,7 @@ def send_message(token, recipient, text):
 					break
 				else:
 					continue
-		r = requests.post("https://graph.facebook.com/v2.6/me/messages",
-			params={"access_token": token},
-			data=json.dumps({
-				"recipient": {"id": recipient},
-				"message": {"text": payload}
-			}),
-			headers={'Content-type': 'application/json'})
+		
 
 		r = requests.post("https://graph.facebook.com/v2.6/me/messages",
 			params={"access_token": token},

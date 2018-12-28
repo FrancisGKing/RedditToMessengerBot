@@ -30,7 +30,7 @@ quick_replies_list = [{
 	"content_type":"text",
 	"title":"Shower Thought",
 	"payload":"Shower_Thought",
-}
+},
 {
 	"content_type":"text",
 	"title":"Jokes",

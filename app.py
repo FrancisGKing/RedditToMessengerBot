@@ -190,7 +190,7 @@ def get_or_create(session, model, **kwargs):
 
 relationship_table=db.Table('relationship_table',
 	db.Column('user_id', db.Integer,db.ForeignKey('users.id'), nullable=False),
-	db.column('post_id', db.Integer,db.ForeignKey('posts.id'), nullable=False),
+	db.Column('post_id', db.Integer,db.ForeignKey('posts.id'), nullable=False),
 	db.PrimaryKeyConstraint('user_id', 'post_id') )
 
 class Users(db.Model):

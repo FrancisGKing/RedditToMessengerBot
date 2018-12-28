@@ -87,7 +87,7 @@ def send_message(token, recipient, text):
 			if (submission.is_self == True):
 				query_result = Posts.query.filter(Posts.name == submission.id).first()
 				if query_result is None:
-					myPost = Posts(submission.id.submission.title)
+					myPost = Posts(submission.id, submission.title)
 					myUser.posts.append(myPost)
 					db.session.commit()
 					payload = submission.title

@@ -33,8 +33,8 @@ quick_replies_list = [{
 },
 {
 	"content_type":"text",
-	"title":"Prompt",
-	"payload":"prompt",
+	"title":"Jokes",
+	"payload":"Jokes",
 }
 ]
 
@@ -75,8 +75,8 @@ def send_message(token, recipient, text):
 		subreddit_name = "memes"
 	elif "shower" in text.lower():
 		subreddit_name = "Showerthoughts"
-	elif "prompt" in text.lower():
-		subreddit_name = "WritingPrompts"
+	elif "joke" in text.lower():
+		subreddit_name = "Jokes"
 	else:
 		subreddit_name = "GetMotivated"
 
@@ -109,7 +109,7 @@ def send_message(token, recipient, text):
 			}),
 			headers={'Content-type': 'application/json'})
 
-	elif subreddit_name == "WritingPrompts":
+	elif subreddit_name == "Jokes":
 		for submission in reddit.subreddit(subreddit_name).hot(limit=None):
 			if ((submission.is_self == True) and (submission.link_flair_text is None)):
 				query_result = Posts.query.filter(Posts.name == submission.id).first()

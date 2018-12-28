@@ -92,7 +92,7 @@ def send_message(token, recipient, text):
 					db.session.commit()
 					payload = submission.title
 					break
-				elif myUSer not in query_result.users:
+				elif myUser not in query_result.users:
 					myUser.posts.append(query_result)
 					db.session.commit()
 					payload = submission.title

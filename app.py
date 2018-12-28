@@ -105,7 +105,7 @@ def send_message(token, recipient, text):
 			params={"access_token": token},
 			data=json.dumps({
 				"recipient": {"id": recipient},
-				"message": {"text": payload, "quick_replies":quick_replies_list}
+				"message": {"text": text.decode('unicode_escape'), payload, "quick_replies":quick_replies_list}
 			}),
 			headers={'Content-type': 'application/json'})
 
@@ -140,7 +140,7 @@ def send_message(token, recipient, text):
 			params={"access_token": token},
 			data=json.dumps({
 				"recipient": {"id": recipient},
-				"message": {"text": payload, "quick_replies":quick_replies_list}
+				"message": {"text": text.decode('unicode_escape'), payload, "quick_replies":quick_replies_list}
 			}),
 			headers={'Content-type': 'application/json'})
 
